@@ -2,7 +2,8 @@ import React, {useContext, useState, useEffect } from 'react'
 import {UserContext} from "../../context/UserProvider";
 import Navigation from '../Navigation/Navigation';
 import styles from './Home.module.scss'
-import { firestore } from '../../firebase';
+import firebase from 'firebase/app';
+import {auth, firestore} from "../../firebase";
 
 
 const Home = () => {
@@ -12,11 +13,10 @@ const Home = () => {
     const [description,setDescription] = useState("");
     const [username,setUsername] = useState("")
 
-    const getUser = () => {
-        //firestore.collection("users").get().then(response => console.log("data",response.data().username))
-        console.log("in home",  userContext.userId)
-        firestore.collection("users").doc(userContext.userId).update({birthday:"12 Aug"})
-    }
+    
+    let currentUserId = firebase.auth().currentUser.uid;
+    let currentUserName = firebase.auth().currentUser.displayName
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,37 +24,35 @@ const Home = () => {
         let title = e.target[0].value;
         let description = e.target[1].value;
         
-        firestore.collection("notes").doc()
-                .set({title: title, description: description})
-                
-        
-        firestore.collection("notes").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                firestore.collection("notes").doc(doc.id).update({noteID: doc.id})
+        let notesCollection = firestore.collection("users").doc(currentUserId).collection("notes");
+
+        //create note
+        notesCollection.doc().set({title: title, description: description})
+        // after its created get the document and assign id 
+        notesCollection.get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => { console.log("doc",doc.id)
+                notesCollection.doc(doc.id).update({noteID: doc.id}).then(console.log("I ADDED THE ID",doc.id))
             });
         });
-        
+
         getNotes();
-        getUser();
-        setTitle("")
-        setDescription("")
+        setTitle(" ")
+        setDescription(" ")
     }
 
     const getNotes = () => {
-        firestore.collection("notes").get().then(notes =>{
+        firestore.collection("users").doc(currentUserId).collection("notes").get().then(notes =>{
             setNotes(notes.docs.map(document => document.data()));
         })
     }
 
     const deleteNote = (id) => {
-        firestore.collection("notes").doc(id).delete().then(()=> {
+        firestore.collection("users").doc(currentUserId).collection("notes").doc(id).delete().then(()=> {
             setNotes(notes.filter(note => note.id !== id));
             getNotes();
             console.log("Document successfully deleted!")
         })
-                .catch((error) => {console.error("Error removing document: ", error);
-            }
-        )
+            .catch((error) => {console.error("Error removing document: ", error)})
     }
 
     useEffect(() => {
@@ -66,7 +64,7 @@ const Home = () => {
             <Navigation />
             <main>
                 <div className={styles.blurred}>
-                    <h2>Hi {userContext.user}!</h2>
+                    <h2>Hi {currentUserName}!</h2>
                     <h3>Write down things you don't want to forget: </h3>
                     <form onSubmit={handleSubmit}>
                         <label>Title</label>
@@ -76,10 +74,11 @@ const Home = () => {
                         <button type="submit">Add</button>
                     </form>
                     <section className={styles.notes}>
-                        {console.log(notes)}
                         {notes && notes.map(note=> <article className={styles.notes_note} key={note.noteID}>
                                                         <h3>{note.title}</h3>
                                                         <button onClick={()=>deleteNote(note.noteID)}>X</button>
+                                                        {console.log("noteTITLE: ", note.title)}
+                                                        {console.log("noteID: ", note.noteID)}
                                                         <p>{note.description}</p>
                                                     </article>)}
                     </section>

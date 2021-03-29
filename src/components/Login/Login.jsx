@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {auth, firestore} from "../../firebase";
 import {UserContext} from "../../context/UserProvider";
 import styles from './Login.module.scss'
@@ -22,8 +22,6 @@ const Login = () => {
         auth.signInWithEmailAndPassword(email,password)
             .then(response => { let userId = firebase.auth().currentUser.uid;
                                 userContext.setUserId(userId);
-                                console.log("userContext.userId",userContext.userId)
-                                console.log("email",email)
                                 history.push("/home");})
             .catch(e => {
              alert("Your email or password don't match!")

@@ -56,3 +56,13 @@
         background-color: rgba(31, 38, 135, 0.762);
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .container {
+        background-image: url("../../assets/img/login-desktop.jpg");
+        
+        .register {
+            width: 30%;
+        }
+    }
+}
