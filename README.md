@@ -1,3 +1,15 @@
+# Notesy - notes taking app
+Notesy is built using React, ES6 and Firebase.
+
+Users can register, login / login with a google account, add/delete notes, sign out.
+
+<img src="https://github.com/tea-milas/notesy-app/blob/main/src/assets/img/Screenshot_login.png" alt="login" />
+<img src="https://github.com/tea-milas/notesy-app/blob/main/src/assets/img/Screenshot_register.png" alt="register" />
+<img src="https://github.com/tea-milas/notesy-app/blob/main/src/assets/img/Screenshot_home.png" alt="home" />
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
