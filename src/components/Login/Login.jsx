@@ -48,16 +48,18 @@ const Login = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
+            <img className={styles.login_img} src="./WFH_svg/wfh_1.svg" alt=""></img>
+            <h1>Notesy</h1>
             <form onSubmit={handleSubmit}>
-                <h1>Notesy</h1>
                 <input placeholder="email..." required></input>
                 <input type="password" placeholder="password..." required></input>
                 <button type="submit">Login</button>
                 <button onClick={googleLogin}>Google login</button>
                 <p>Don't have an account? <Route><Link to="/register"><span>Register here</span></Link></Route></p>
             </form>
-        </div>
+            <img className={styles.wave_img} src="./WFH_svg/wave.svg" alt="wave background"></img>
+        </section>
     )
 }
 

@@ -19,11 +19,11 @@ const Register = () => {
         userContext.setUser(username)
 
         firestore.collection("users").doc().set({username: username, email: email});
-        // firestore.collection("users").get().then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         firestore.collection("users").doc(doc.id).update({userID: doc.id})
-        //     });
-        // });
+        firestore.collection("users").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                firestore.collection("users").doc(doc.id).update({userID: doc.id})
+            });
+        });
         
         auth.createUserWithEmailAndPassword(email,password)
             .then(response => { alert(username + ", you have succesfully registered!");
@@ -36,13 +36,15 @@ const Register = () => {
    
     return (
         <div className={styles.container}>
+            <img className={styles.register_img} src="./WFH_svg/wfh_2.svg" alt="wave background"></img>
+            <h1>Register</h1>
             <form className={styles.register} onSubmit={handleSubmit}>
-                <h1>Register</h1>
                 <input placeholder="username..."></input>
                 <input placeholder="email..."></input>
                 <input type="password" placeholder="password..."></input>
             <button type="submit">Register</button> 
             </form>
+            <img className={styles.wave_img} src="./WFH_svg/wave.svg" alt="wave background"></img>
         </div>
        
     )

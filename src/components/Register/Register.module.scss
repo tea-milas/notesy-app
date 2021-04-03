@@ -1,68 +1,113 @@
 .container {
-    background-image: url("../../assets/img/pexels-spring-toan-3854479.jpg");
-    background-color: beige;
+    background-color: #F7F7EB;
     height: 100vh;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.register {
-    height: 60vh;
-    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 9.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    .register_img {
+        height: 250px;
+        margin: 30px auto;
 
-    h1 {
-        margin:0 0 50px 0;
-        font-family: 'Lexend', sans-serif;
-        font-size: 2.5em;
-        color: white;
-        text-shadow:  1px 2px 2px rgba(122, 150, 213, 0.51);
     }
 
+    .wave_img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    h1 {
+        margin:0;
+        font-family: 'Lexend', sans-serif;
+        font-size: 2.5em;
+        color: #FDB660;
+    }
+    
+}
+
+.register {
+    margin-top: 20px;
+    z-index: 2;
+    height: 60vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
     input {
-        margin-top: 5px;
-        height: 30px;
+        margin-top: 15px;
         width: 90%;
-        padding-left: 5px;
-        color: rgba(31, 38, 135, 0.864);
+        color: rgb(31, 38, 135);
+        font-size: large;
+
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+        padding: 16px;
+        background-color:#EBECF0;
+
+        margin-right: 16px/2;
+        box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px white;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+    
+        &:focus {
+        box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px white;
+        }
     }
     
     button {
-        margin-top: 10px;
-        height: 40px;
+        margin-top: 25px;
         width: 90%;
-        border: 1px solid rgba(31, 38, 135, 0.864);
-        border-radius: 5px;
         background-color: rgba(31, 38, 135, 0.864);
-        color: wheat;
-    }
+        border: 0;
+        outline: 0;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 16px;
+        color:wheat;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
     
-    button:hover, button:active {
-        border: 1px solid rgba(31, 38, 135, 0.762);
-        background-color: rgba(31, 38, 135, 0.762);
+        box-sizing: border-box;
+        appearance: none;
+        -webkit-appearance: none;
+        
+        &:hover, &:active {
+            background-color: rgb(31, 38, 135);
+            box-shadow:  inset 1px 1px 2px #263b89, inset -1px -1px 2px rgb(108, 104, 162);
+        }
     }
 }
 
 @media screen and (min-width: 1000px) {
     .container {
-        background-image: url("../../assets/img/login-desktop.jpg");
-        
+        .register_img {
+            height: 280px;
+            margin: 0;
+        }
+
+        h1 {
+            color: rgb(31, 38, 135);
+        }
+
         .register {
             width: 30%;
+
+            button {
+                box-shadow: -2px -2px 5px #eba34b, 2px 2px 5px #df973f;
+                
+                &:hover, &:active {
+                    box-shadow:  inset 1px 1px 2px #263b89, inset -1px -1px 2px rgb(108, 104, 162);
+                }
+            }
         }
     }
 }

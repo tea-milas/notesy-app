@@ -1,0 +1,24 @@
+.signout {
+    margin-right: 20px;
+}
+.signout_btn {
+    margin: 0;
+    box-shadow: 2px 2px 5px rgba(201, 176, 165, 0.442);
+    border-radius: 50%;
+    background-color: rgb(247, 247, 235);
+    height:30px;
+    width: 30px;
+    padding: 0;
+    color: rgb(245, 190, 135);
+    border: 0;
+    outline: 0;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+
+
+    &:hover, &:active {
+    box-shadow: none;
+    color: rgb(208, 150, 92);
+    }
+}

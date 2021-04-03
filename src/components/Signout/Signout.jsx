@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
-import './Signout.css';
+import styles from './Signout.module.scss';
 import {auth} from "../../firebase";
 
 const Signout = () => {
@@ -12,8 +12,8 @@ const Signout = () => {
 
 
     return (
-        <div id="signout">
-            <button  id="signout_btn" onClick={handleSignout}>SO</button>
+        <div className={styles.signout}>
+            <button  className={styles.signout_btn} onClick={handleSignout}>SO</button>
         </div>
     )
 }

@@ -1,159 +1,59 @@
 .home {
     min-height: 100vh;
     overflow-y: scroll;
-    background-image: url("../../assets/img/pexels-valeriia-miller-2527561.jpg");
-    background-repeat: no-repeat;
+    background-color: rgb(247, 247, 235);
 }
 
 main {
     margin-top: 0;
-    min-height: 100vh;
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 10px );
-
-    .blurred {
-        padding-top: 70px;
-        height: 100%;
-        max-width: 1025px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    
-        h2 {
-            color:white;
-            text-shadow:  1px 1px 2px #fdb66045;
-        }
-    
-        h3 {
-            color:white;
-            width: 80%;
-            margin: 10px 0 20px 0;
-            text-align: center;
-            text-shadow:  1px 1px 2px #fdb66023;
-            
-        }
-    
-        form {
-            height: 25%;
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            
-            label {
-                font-size: large;
-                width: 100%;
-                text-align: left;
-               // color: rgb(59, 59, 111);
-                color:white;
-                margin-top: 20px;
-            }
-    
-            input {
-                color: rgba(31, 38, 135, 0.864);
-                font-size: medium;
-                margin-top: 6px;
-                border-bottom: 1px solid rgba(31, 38, 135, 0.864);
-                border-right: none;
-                border-top:none;
-                border-left: none;
-                border-radius: 5px;
-                width:100%;
-                padding-top: 10px;
-                padding-bottom: 5px;
-                padding-left: 5px;
-            }
-    
-            button {
-                margin-top: 15px;
-                height: 40px;
-                padding: 10px 20px;
-                width: 100%;
-                border: 1px solid rgba(31, 38, 135, 0.864);
-                border-radius: 5px;
-                background-color: rgba(31, 38, 135, 0.864);
-                color: wheat;
-    
-            }
-             
-            button:hover, button:active {
-                border: 1px solid rgba(31, 38, 135, 0.762);
-                background-color: rgba(31, 38, 135, 0.762);
-            }
-        }
-    }
-}
-
-
-
-.notes {
-    width:80%;
-    margin-top: 50px;
-    margin-bottom: 70px;
+    min-height: 88vh;
+    max-width: 1025px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+ 
+    .home_img {
+        height: 250px;
+        width: auto;
+    }
 
-    article {
-        margin-bottom: 20px;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        background-color: #FDB660;
+    h2 {
+        font-size: xx-large;
+        color:rgba(31, 38, 135, 0.864);
+        text-shadow:  1px 1px 2px #fdb66045;
+    } 
+
+    .open_btn {
+        margin: 15px 0;
+        width: 80%;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
         border-radius: 10px;
-        color:white;
+        padding: 16px;
+        background-color:rgba(31, 38, 135, 0.762);
+        color:wheat;
+        font-weight: bold;
+        box-shadow: -5px -5px 20px white,  5px 5px 20px #BABECC;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
 
-        h3 {
-            margin-left: 10px;
-            margin-bottom: 0px;
-            text-align: left;
+
+        &:hover {
+        box-shadow: -2px -2px 5px white, 2px 2px 5px #BABECC;
         }
-
-        button {
-            position: absolute;
-            top: 17px;
-            right: 15px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: small;
-            font-weight: 600;
-            
-            border: 3px solid white;
-            background-color: transparent;
-            border-radius: 100%;
-            width: 20px;
-            height: 20px;
-        }
-
-        button:active {
-            color: #FDB660;
-            border: 3px solid white;
-            background-color: white;
-            border-radius: 100%;
-            width: 20px;
-            height: 20px;
-            
-        }
-
-        p {
-            margin: 20px 10px;
-            width: 95%;
-            text-align: start;
+        
+        &:active {
+        box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px white;
         }
     }
 }
 
 @media only screen and (min-width: 1025px) {
     .home {
+        overflow:auto;
         display:flex;
         flex-direction: column;
         align-items: center;
@@ -162,14 +62,18 @@ main {
     }
 
     main {
-        width: 100%;
+        width: 50%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        .blurred {
-            width: 50%;
+
+        .home_img {
+            margin-top: 0;
+            height: 400px;
+            width: auto;
         }
+        
     } 
   }
