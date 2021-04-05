@@ -15,7 +15,7 @@ const useNotes = () => {
         })
     }
 
-    const submitNote = (e) => {
+    const submitNote = async(e) => {
         e.preventDefault();
         
         let title = e.target[0].value;
@@ -26,11 +26,12 @@ const useNotes = () => {
         //create note
         notesCollection.doc().set({title: title, description: description})
         // after its created get the document and assign id 
-        notesCollection.get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => { console.log("doc",doc.id)
-                notesCollection.doc(doc.id).update({noteID: doc.id}).then(console.log("I ADDED THE ID",doc.id))
-            });
-        });
+        await notesCollection.get().then(collection => {
+            collection.docs.map(doc => {
+               return notesCollection.doc(doc.id).update({noteID: doc.id})
+            })
+            
+        })
 
         getNotes();
         setTitle(" ")
