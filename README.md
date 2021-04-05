@@ -4,7 +4,7 @@ Users can register, login / login with a google account, add/delete notes, sign 
 
 # Instructions
 * If you don't want to create a new account you can use: 
-  * email: test@test.com   
+  * email: tester@test.com   
   * password:1234567
 * Otherwise, click on <b>register here<b>
   * After filling in the input fields click on the register button  
