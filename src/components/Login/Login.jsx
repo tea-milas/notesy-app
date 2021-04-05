@@ -49,7 +49,7 @@ const Login = () => {
 
     return (
         <section className={styles.container}>
-            <img className={styles.login_img} src="./WFH_svg/wfh_1.svg" alt=""></img>
+            <img className={styles.login_img} src="./WFH_svg/wfh_1.svg" alt="girl with a laptop"></img>
             <h1>Notesy</h1>
             <form onSubmit={handleSubmit}>
                 <input placeholder="email..." required></input>

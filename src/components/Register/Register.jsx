@@ -36,7 +36,7 @@ const Register = () => {
    
     return (
         <div className={styles.container}>
-            <img className={styles.register_img} src="./WFH_svg/wfh_2.svg" alt="wave background"></img>
+            <img className={styles.register_img} src="./WFH_svg/wfh_2.svg" alt="person with a phone"></img>
             <h1>Register</h1>
             <form className={styles.register} onSubmit={handleSubmit}>
                 <input placeholder="username..."></input>

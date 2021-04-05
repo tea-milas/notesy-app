@@ -31,11 +31,11 @@ const Home = () => {
         <div className={styles.home}>
             <Navigation />
             <main>
-                    <img className={styles.home_img} src="./WFH_svg/wfh_8.svg" alt="girl with a laptop"></img>
-                    <h2>Hi {currentUserName}!</h2>
-                    {isMobile ? <button className={styles.open_btn} onClick={()=>setIsOpen(!isOpen)}>{isOpen ? "Close notes" : "Add a new note"}</button>:
-                                <Notes />}
-                    {isOpen && <Notes />}
+                <img className={styles.home_img} src="./WFH_svg/wfh_8.svg" alt="girl with a laptop"></img>
+                <h2>Hi {currentUserName}!</h2>
+                {isMobile ? <button className={styles.open_btn} onClick={()=>setIsOpen(!isOpen)}>{isOpen ? "Close notes" : "Add a new note"}</button>:
+                            <Notes />}
+                {isMobile && isOpen && <Notes />}
             </main>
             <Footer />
         </div>
