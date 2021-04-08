@@ -6,7 +6,8 @@ import styles from './Login.module.scss'
 import { useHistory } from "react-router-dom";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
+import loginImg from "../../assets/img/WFH_svg/wfh_1.svg";
+import loginWave from "../../assets/img/WFH_svg/wave.svg";
 
 const Login = () => {
     const userContext = useContext(UserContext)
@@ -49,7 +50,7 @@ const Login = () => {
 
     return (
         <section className={styles.container}>
-            <img className={styles.login_img} src="./WFH_svg/wfh_1.svg" alt="girl with a laptop"></img>
+            <img className={styles.login_img} src={loginImg} alt="girl with a laptop"></img>
             <h1>Notesy</h1>
             <form onSubmit={handleSubmit}>
                 <input placeholder="email..." required></input>
@@ -58,7 +59,7 @@ const Login = () => {
                 <button onClick={googleLogin}>Google login</button>
                 <p>Don't have an account? <Route><Link to="/register"><span>Register here</span></Link></Route></p>
             </form>
-            <img className={styles.wave_img} src="./WFH_svg/wave.svg" alt="wave background"></img>
+            <img className={styles.wave_img} src={loginWave} alt="wave background"></img>
         </section>
     )
 }

@@ -4,7 +4,8 @@ import {auth, firestore} from "../../firebase"
 import { useHistory } from "react-router-dom";
 import styles from "./Register.module.scss"
 import firebase from 'firebase/app';
-
+import regImg from "../../assets/img/WFH_svg/wfh_2.svg";
+import regWave from "../../assets/img/WFH_svg/wave.svg";
 
 const Register = () => {
     let history = useHistory();
@@ -36,7 +37,7 @@ const Register = () => {
    
     return (
         <div className={styles.container}>
-            <img className={styles.register_img} src="./WFH_svg/wfh_2.svg" alt="person with a phone"></img>
+            <img className={styles.register_img} src={regImg} alt="person with a phone"></img>
             <h1>Register</h1>
             <form className={styles.register} onSubmit={handleSubmit}>
                 <input placeholder="username..."></input>
@@ -44,7 +45,7 @@ const Register = () => {
                 <input type="password" placeholder="password..."></input>
             <button type="submit">Register</button> 
             </form>
-            <img className={styles.wave_img} src="./WFH_svg/wave.svg" alt="wave background"></img>
+            <img className={styles.wave_img} src={regWave} alt="wave background"></img>
         </div>
        
     )
