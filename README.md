@@ -1,4 +1,4 @@
-# Notesy - notes taking app
+# Notesy - note taking app
 Notesy is built using React, ES6, SASS and Firebase.
 Users can register, login / login with a google account, add/delete notes, sign out.
 
