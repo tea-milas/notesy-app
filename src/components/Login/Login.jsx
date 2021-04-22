@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {auth, firestore} from "../../firebase";
+import {auth} from "../../firebase";
 import {UserContext} from "../../context/UserProvider";
 import styles from './Login.module.scss'
 import { useHistory } from "react-router-dom";
@@ -35,16 +35,10 @@ const Login = () => {
 
         firebase.auth().signInWithPopup(provider)
         .then((result) => {
-            const credential = result.credential;
-            const token = credential.accessToken;
-            const user = result.user;
             history.push("/home")
 
           }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            const email = error.email;
-            const credential = error.credential; 
+            console.log(error.message)
           });
     }
 

@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss"
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className={styles.footer}>
            <p>Made by Tea | March 2021</p>
         </footer>
     )
