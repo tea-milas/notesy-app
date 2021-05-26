@@ -3,7 +3,7 @@ Notesy is built using React, ES6, SASS and Firebase.
 Users can register, login / login with a google account, add/delete notes, sign out.
 
 # Instructions
-* Click here to visit the app: <a href="https://notesy-app-tea.herokuapp.com/" >NOTESY</a>
+* Click here to visit the app: <a href="http://notesy.teamilas.com/" >NOTESY</a> (if that doesn't work by any chance click <a href="https://notesy-app-tea.herokuapp.com/">HERE</a> for heroku)
 * If you don't want to create a new account you can use: 
   * email: tester@test.com   
   * password:1234567
