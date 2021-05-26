@@ -20,11 +20,14 @@ const useNotes = () => {
         
         let title = e.target[0].value;
         let description = e.target[1].value;
+        let day = new Date().getDate();
+        let month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
         
         let notesCollection = firestore.collection("users").doc(currentUserId).collection("notes");
 
         //create note
-        notesCollection.doc().set({title: title, description: description})
+        notesCollection.doc().set({title: title, description: description, day: day, month: month[new Date().getMonth()]})
         // after its created get the document and assign id 
         await notesCollection.get().then(collection => {
             collection.docs.map(doc => {

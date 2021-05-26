@@ -24,7 +24,6 @@ const Home = () => {
 
     let isMobile = (width <= 768);
 
-
     let currentUserName = firebase.auth().currentUser.displayName
 
     return (

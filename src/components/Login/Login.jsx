@@ -10,7 +10,7 @@ import loginImg from "../../assets/img/WFH_svg/wfh_1.svg";
 import loginWave from "../../assets/img/WFH_svg/wave.svg";
 
 const Login = () => {
-    const userContext = useContext(UserContext)
+    const userContext = useContext(UserContext);
     let history = useHistory();
     let provider = new firebase.auth.GoogleAuthProvider();
 
@@ -26,7 +26,7 @@ const Login = () => {
                                 history.push("/home");})
             .catch(e => {
              alert("Your email or password don't match!")
-        })
+        });
         
     }
 
@@ -34,7 +34,7 @@ const Login = () => {
         provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
         firebase.auth().signInWithPopup(provider)
-        .then((result) => {
+        .then((response) => {
             history.push("/home")
 
           }).catch((error) => {
@@ -51,7 +51,9 @@ const Login = () => {
                 <input type="password" placeholder="password..." required></input>
                 <button type="submit">Login</button>
                 <button onClick={googleLogin}>Google login</button>
-                <p>Don't have an account? <Route><Link to="/register"><span>Register here</span></Link></Route></p>
+                <p>Don't have an account? 
+                    <Route><Link to="/register"><span>Register here</span></Link></Route>
+                </p>
             </form>
             <img className={styles.wave_img} src={loginWave} alt="wave background"></img>
         </section>
