@@ -1,7 +1,7 @@
 {
   "name": "notes-app",
   "version": "0.1.0",
-  "homepage":"https://github.com/tea-milas/notesy-app" ,
+  "homepage": "https://github.com/tea-milas/notesy-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.0"
   }
 }

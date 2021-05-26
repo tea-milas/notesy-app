@@ -24,6 +24,7 @@ yarn-error.log*
 
 #firebase
 .env
-
-
+firestore.rules
+storage.rules
+.firebaserc
 .idea
